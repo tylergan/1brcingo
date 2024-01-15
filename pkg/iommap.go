@@ -36,7 +36,7 @@ func printResults(aggregators map[string]*Aggregator) {
 }
 
 // MapFileIntoMem maps the file into memory so that we can directly access it via memory
-// without having to read it from disk.
+// without having to read it from disk for faster performance.
 func MapFileIntoMem() (mmap.MMap, error) {
 	file, err := os.Open(filename)
 	if err != nil {

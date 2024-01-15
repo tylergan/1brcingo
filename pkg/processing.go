@@ -42,6 +42,7 @@ func processChunk(data []byte, results chan<- map[string]*Aggregator) {
 	results <- localAggr
 }
 
+// the main function that processes the data
 func ProcessData(data mmap.MMap) {
 	processorCnt := runtime.NumCPU()
 	chunkSize := len(data) / processorCnt

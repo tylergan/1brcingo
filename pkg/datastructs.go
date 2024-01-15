@@ -9,7 +9,7 @@ type Aggregator struct {
 	Min, Max, Sum, Count float64
 }
 
-// Use a sync.Pool to reuse aggregators, reducing garbage collection overhead.
+// Use a sync.Pool to reuse aggregators (instances that of our interface which can be reused), reducing garbage collection overhead.
 // Likely not useful since we are only releasing aggregators at the end of the program,
 // so no aggregators are reused. But it's a good example of how to use sync.Pool.
 var AggregatorPool = sync.Pool{
